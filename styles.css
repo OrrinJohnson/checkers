@@ -82,7 +82,7 @@ body {
 }
 
 .checker.black .outer-ring {
-  border: .32em solid var(--black-checker-border);
+  border: .23em solid var(--black-checker-border);
 }
 
 .checker.red {
@@ -91,7 +91,7 @@ body {
 }
 
 .checker.red .outer-ring {
-  border: .32em solid var(--red-checker-border);
+  border: .23em solid var(--red-checker-border);
 }
 
 .checker.red.king {

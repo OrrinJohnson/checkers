@@ -8,6 +8,11 @@
   --board-black: #28282b;
   --board-red: #9a2a2a;
   --board-border: #834333;
+  --checker-black: #1b1212;
+  --black-checker-border: #343434;
+  --checker-red: #c41e3a;
+  --red-checker-border: #8b0000;
+  --king-border-color: #ffd700;
 }
 
 /* desktop styles */
@@ -36,6 +41,9 @@ body {
 .square {
   width: calc(100% / 8);
   height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .row:nth-child(odd) .square:nth-child(even),
@@ -46,4 +54,46 @@ body {
 .row:nth-child(odd) .square:nth-child(odd),
 .row:nth-child(even) .square:nth-child(even) {
   background-color: var(--board-red);
+}
+
+.checker {
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.outer-ring {
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--king-border-color);
+  font-size: 1.6rem;
+}
+
+.checker.black {
+  background-color: var(--checker-black);
+  border: .22em dotted var(--black-checker-border);
+}
+
+.checker.black .outer-ring {
+  border: .32em solid var(--black-checker-border);
+}
+
+.checker.red {
+  background-color: var(--checker-red);
+  border: .22em dotted var(--red-checker-border);
+}
+
+.checker.red .outer-ring {
+  border: .32em solid var(--red-checker-border);
+}
+
+.checker.red.king {
+  border: .22em dotted var(--king-border-color);
 }

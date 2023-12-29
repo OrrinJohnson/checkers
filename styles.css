@@ -1,0 +1,49 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --board-black: #28282b;
+  --board-red: #9a2a2a;
+  --board-border: #834333;
+}
+
+/* desktop styles */
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#board {
+  width: 50em;
+  height: 50em;
+  padding: 0;
+  margin-top: 3em;
+  border: 25px inset var(--board-border);
+}
+
+.row {
+  width: 100%;
+  height: calc(100% / 8);
+  display: flex;
+}
+
+.square {
+  width: calc(100% / 8);
+  height: 100%;
+}
+
+.row:nth-child(odd) .square:nth-child(even),
+.row:nth-child(even) .square:nth-child(odd) {
+  background-color: var(--board-black);
+}
+
+.row:nth-child(odd) .square:nth-child(odd),
+.row:nth-child(even) .square:nth-child(even) {
+  background-color: var(--board-red);
+}
